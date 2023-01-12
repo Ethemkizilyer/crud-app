@@ -1,22 +1,12 @@
 "use client"
 import React, { useState, useEffect, useContext } from "react";
-import ReactDom from "react-dom";
 import { AuthContext } from "../context/AuthContext";
 
-export default function Modal(props) {
-  const { setOpenModal } = props;
-  const [_document, set_document] = useState(null);
+export default function Modal({ setOpenModal }) {
+
   const { logout } = useContext(AuthContext);
 
-  useEffect(() => {
-    set_document(document);
-  }, []);
-
-  if (!_document) {
-    return null;
-  }
-
-  return ReactDom.createPortal(
+  return (
     <div className="fixed inset-0 bg-white text-slate-900 text-lg sm:text-xl flex flex-col">
       <div className="flex items-center justify-between border-b border-solid border-slate-900 p-4">
         <h1 className="font-extrabold text-2xl sm:text-5xl select-none">
@@ -38,7 +28,6 @@ export default function Modal(props) {
           Logout
         </h2>
       </div>
-    </div>,
-    _document.getElementById("portal")
-  );
+    </div>
+  )
 }
