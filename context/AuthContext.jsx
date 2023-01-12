@@ -18,7 +18,6 @@ const AuthContext = createContext();
 function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [load, setLoa] = useState("Ethem");
 
   function signup(email, password) {
     createUserWithEmailAndPassword(auth, email, password);
@@ -46,8 +45,7 @@ function AuthProvider({ children }) {
     login,
     signup,
     logout,
-    load,
-    loading,
+   
   };
 
   return (
