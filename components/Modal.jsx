@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+"use client"
+import React, { useState, useEffect, useContext } from "react";
 import ReactDom from "react-dom";
-import { useAuth } from "../context/AuthContext";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Modal(props) {
   const { setOpenModal } = props;
   const [_document, set_document] = useState(null);
-  const { logout } = useAuth();
+  const { logout } = useContext(AuthContext);
 
   useEffect(() => {
     set_document(document);
