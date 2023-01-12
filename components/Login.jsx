@@ -8,9 +8,10 @@ export default function Login() {
   const [isLoggingIn, setIsLoggingIn] = useState(true);
 
   const { login, signup, currentUser } = useContext(AuthContext);
-  console.log(currentUser);
+  // console.log(currentUser);
 
   async function submitHandler() {
+    console.log("email:",email);
     if (!email || !password) {
       setError("Please enter email and password");
       return;
@@ -46,7 +47,7 @@ export default function Login() {
       <input
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        type="password"
+        type="text"
         placeholder="Password"
         className="outline-none text-slate-900 p-2 w-full max-w-[40ch] duration-300 border-b-2 border-solid border-white focus:border-cyan-300"
       />

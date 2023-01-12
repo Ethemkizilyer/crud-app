@@ -2,7 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyBdgBklh64dL3YiTLRZomQA7ZWIRchzR_8",
   authDomain: "nextjs-2b888.firebaseapp.com",
