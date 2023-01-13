@@ -5,8 +5,8 @@ import { db } from "../firebase";
 
 export default function useFetchTodos() {
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [todos, setTodos] = useState(null);
+  const [error, setError] = useState("");
+  const [todos, setTodos] = useState("");
 
   const { currentUser } = useContext(AuthContext);
 

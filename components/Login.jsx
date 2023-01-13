@@ -4,7 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const [isLoggingIn, setIsLoggingIn] = useState(true);
 
   const { login, signup, currentUser } = useContext(AuthContext);
@@ -47,7 +47,7 @@ export default function Login() {
       <input
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        type="text"
+        type="password"
         placeholder="Password"
         className="outline-none text-slate-900 p-2 w-full max-w-[40ch] duration-300 border-b-2 border-solid border-white focus:border-cyan-300"
       />

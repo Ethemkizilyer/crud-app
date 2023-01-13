@@ -16,7 +16,7 @@ const AuthContext = createContext();
 // }
 
 function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState("");
   const [loading, setLoading] = useState(true);
 
   function signup(email, password) {

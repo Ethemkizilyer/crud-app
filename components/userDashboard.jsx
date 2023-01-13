@@ -4,10 +4,12 @@ import TodoCard from "./TodoCard";
 import { doc, setDoc, deleteField } from "firebase/firestore";
 import { db } from "../firebase";
 import useFetchTodos from "../hooks/fetchTodos";
+import { FaSpinner } from "react-icons/fa";
+
 
 export default function UserDashboard() {
   const { userInfo, currentUser } = useContext(AuthContext);
-  const [edit, setEdit] = useState(null);
+  const [edit, setEdit] = useState("");
   const [todo, setTodo] = useState("");
   const [edittedValue, setEdittedValue] = useState("");
 
@@ -108,7 +110,7 @@ export default function UserDashboard() {
       </div>
       {loading && (
         <div className="flex-1 grid place-items-center">
-          <i className="fa-solid fa-spinner animate-spin text-6xl"></i>
+          <FaSpinner className="animate-spin text-6xl" />
         </div>
       )}
       {!loading && (
